@@ -36,7 +36,7 @@ export default function HomePage() {
           <img src="https://picsum.photos/seed/wedding1/1920/1080" alt="Foto Đumišić studio" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/30 to-charcoal/80"></div>
-        
+
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center text-cream px-6 max-w-4xl mt-16">
             <FadeIn>
@@ -61,7 +61,7 @@ export default function HomePage() {
             </FadeIn>
           </div>
         </div>
-        
+
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 hidden md:block">
           <div className="w-px h-16 bg-gradient-to-b from-cream/0 via-cream/50 to-cream/0 animate-pulse"></div>
         </div>
@@ -88,7 +88,7 @@ export default function HomePage() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.4}>
-                <a href="#o-nama" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
+                <a href="/o-nama" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
                   Saznaj više
                 </a>
               </FadeIn>
@@ -113,7 +113,7 @@ export default function HomePage() {
               </h2>
             </div>
           </FadeIn>
-          
+
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, i) => (
               <FadeIn key={service.title} delay={i * 0.2}>
@@ -144,7 +144,7 @@ export default function HomePage() {
               </h2>
             </div>
           </FadeIn>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {portfolioPreview.map((img, i) => (
               <FadeIn key={i} delay={(i % 4) * 0.1}>
@@ -154,7 +154,7 @@ export default function HomePage() {
               </FadeIn>
             ))}
           </div>
-          
+
           <FadeIn delay={0.4}>
             <div className="text-center mt-12">
               <a href="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
@@ -176,7 +176,7 @@ export default function HomePage() {
               </h2>
             </div>
           </FadeIn>
-          
+
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {testimonials.map((t, i) => (
               <FadeIn key={i} delay={i * 0.2}>
@@ -199,7 +199,7 @@ export default function HomePage() {
           <img src="https://picsum.photos/seed/wedding3/1920/1080" alt="Kontakt pozadina" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-charcoal/80"></div>
         </div>
-        
+
         <div className="relative z-10 container-editorial text-center px-6">
           <FadeIn>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream mb-4">
