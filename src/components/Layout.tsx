@@ -22,7 +22,7 @@ export function Navbar() {
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Usluge', path: '/#usluge' },
     { name: 'O nama', path: '/o-nama' },
-    { name: 'Kontakt', path: '/#kontakt' },
+    { name: 'Kontakt', path: '/kontakt' },
   ];
 
   return (
@@ -48,7 +48,7 @@ export function Navbar() {
             </div>
 
             <div className="hidden lg:block">
-              <a href="/#kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
+              <a href="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
                 Rezerviši termin
               </a>
             </div>
@@ -95,7 +95,7 @@ export function Navbar() {
               transition={{ delay: 0.6 }}
             >
               <a
-                href="/#kontakt"
+                href="/kontakt"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream text-charcoal hover:bg-cream/90 tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 mt-8"
               >
@@ -129,7 +129,7 @@ export function Footer() {
             <ul className="space-y-3">
               {['Portfolio', 'Usluge', 'O nama', 'Kontakt'].map((item) => (
                 <li key={item}>
-                  <Link to={['Portfolio', 'O nama'].includes(item) ? `/${item.toLowerCase().replace(' ', '-')}` : `/#${item.toLowerCase().replace(' ', '-')}`} className="text-cream/70 hover:text-cream transition-colors duration-300 font-light">
+                  <Link to={['Portfolio', 'O nama', 'Kontakt'].includes(item) ? `/${item.toLowerCase().replace(' ', '-')}` : `/#${item.toLowerCase().replace(' ', '-')}`} className="text-cream/70 hover:text-cream transition-colors duration-300 font-light">
                     {item}
                   </Link>
                 </li>

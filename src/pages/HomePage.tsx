@@ -54,7 +54,7 @@ export default function HomePage() {
                 <a href="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
                   Pogledaj portfolio
                 </a>
-                <a href="#kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 text-cream border border-cream/50 backdrop-blur-sm hover:bg-cream/10 hover:text-cream tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 bg-transparent">
+                <a href="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 text-cream border border-cream/50 backdrop-blur-sm hover:bg-cream/10 hover:text-cream tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 bg-transparent">
                   Rezerviši termin
                 </a>
               </div>
@@ -208,7 +208,7 @@ export default function HomePage() {
             <p className="text-cream/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
               Pošaljite upit i dobićete odgovor u roku 24h.
             </p>
-            <a href="#kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
+            <a href="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
               Kontakt
             </a>
           </FadeIn>
