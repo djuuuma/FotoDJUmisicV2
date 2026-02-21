@@ -181,7 +181,7 @@ export default function HomePage() {
             {testimonials.map((t, i) => (
               <FadeIn key={i} delay={i * 0.2}>
                 <div className="text-center">
-                  <p className="font-serif text-xl italic text-foreground leading-relaxed mb-6">
+                  <p className="font-sans text-base md:text-lg font-light text-foreground/80 leading-relaxed mb-6">
                     "{t.quote}"
                   </p>
                   <p className="font-medium text-foreground">{t.name}</p>
