@@ -3,28 +3,28 @@ import { FadeIn } from '../components/Layout';
 
 export default function HomePage() {
   const services = [
-    { title: 'Vjenčanja', img: 'https://picsum.photos/seed/wedding2/600/800' },
-    { title: 'Portret', img: 'https://picsum.photos/seed/portrait/600/800' },
-    { title: 'Event', img: 'https://picsum.photos/seed/event/600/800' },
+    { title: 'Vjenčanja & Eventi', img: 'https://picsum.photos/seed/wedding2/600/800' },
+    { title: 'Portreti & Dokumenti', img: 'https://picsum.photos/seed/portrait/600/800' },
+    { title: 'Razvijanje 35mm Filma', img: 'https://picsum.photos/seed/film/600/800' },
   ];
 
   const portfolioPreview = Array.from({ length: 8 }).map((_, i) => `https://picsum.photos/seed/port${i}/800/800`);
 
   const testimonials = [
     {
-      quote: "Fotografije su predivne, a cijelo iskustvo bilo je opušteno i profesionalno. Preporučujemo svima!",
-      name: "Amela & Adnan",
-      event: "Vjenčanje 2024"
+      quote: "A photography shop with a long tradition. A wonderful and professional duo, father and son, from whom you will leave with a smile in addition to top quality photos.",
+      name: "Belma Kapić",
+      event: "Google Review"
     },
     {
-      quote: "Uspjeli su uhvatiti sve posebne momente našeg vjenčanja. Zauvijek ćemo čuvati ove uspomene.",
-      name: "Lejla & Emir",
-      event: "Vjenčanje 2023"
+      quote: "I got my films developed here! They were very nice, and fast! Got the scans back in 2 days via e-mail.",
+      name: "Şevval Akkaya",
+      event: "Google Review"
     },
     {
-      quote: "Porodično fotografiranje je bilo toliko zabavno za djecu. Fotografije su ispale magično!",
-      name: "Porodica Hodžić",
-      event: "Novogodišnje fotografiranje"
+      quote: "A very pleasant young man was helping us with document photos. High quality and done in 20 minutes.",
+      name: "Timur Ljubuncic",
+      event: "Google Review"
     }
   ];
 

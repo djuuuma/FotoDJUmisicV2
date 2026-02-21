@@ -113,7 +113,7 @@ export function Footer() {
   return (
     <footer id="kontakt" className="bg-charcoal text-cream/90">
       <div className="container-editorial section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8">
           <div className="lg:col-span-1">
             <Link to="/" className="font-serif text-2xl font-medium tracking-wide">
               <span className="italic mr-1">Foto</span>
@@ -143,8 +143,7 @@ export function Footer() {
               <li className="flex items-start gap-3 text-cream/70 font-light">
                 <Phone className="text-gold mt-1 shrink-0" size={16} />
                 <span>
-                  +387 61 123 456<br />
-                  +387 33 123 456
+                  033 205-941
                 </span>
               </li>
               <li className="flex items-center gap-3 text-cream/70 font-light">
@@ -154,21 +153,14 @@ export function Footer() {
               <li className="flex items-start gap-3 text-cream/70 font-light">
                 <MapPin className="text-gold mt-1 shrink-0" size={16} />
                 <span>
-                  Zmaja od Bosne bb<br />
+                  Zelenih beretki 22<br />
                   Sarajevo, 71000
                 </span>
               </li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Pratite nas</h4>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center hover:border-gold hover:text-gold transition-all duration-300">
-                <Instagram size={18} />
-              </a>
-            </div>
-          </div>
+          {/* Removed instagram column */}
         </div>
 
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -176,8 +168,6 @@ export function Footer() {
             © {new Date().getFullYear()} Foto Đumišić. Sva prava zadržana.
           </p>
           <div className="flex gap-6 text-sm text-cream/40">
-            <a href="#" className="hover:text-cream/70 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-cream/70 transition-colors">Terms</a>
             <a href="#" className="hover:text-cream/70 transition-colors">BS</a>
           </div>
         </div>

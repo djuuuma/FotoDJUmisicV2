@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FadeIn } from '../components/Layout';
-import { MapPin, Phone, Mail, Instagram, Clock, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({
@@ -94,7 +94,7 @@ export default function ContactPage() {
                                         <h4 className="font-medium text-foreground tracking-wide uppercase text-sm flex items-center gap-2">
                                             <MapPin className="text-gold" size={16} /> Adresa
                                         </h4>
-                                        <p>Zmaja od Bosne bb<br />71000 Sarajevo, BiH</p>
+                                        <p>Zelenih beretki 22<br />71000 Sarajevo, BiH</p>
                                     </div>
                                     <div className="space-y-4">
                                         <h4 className="font-medium text-foreground tracking-wide uppercase text-sm flex items-center gap-2">
@@ -106,16 +106,13 @@ export default function ContactPage() {
                                         <h4 className="font-medium text-foreground tracking-wide uppercase text-sm flex items-center gap-2">
                                             <Phone className="text-gold" size={16} /> Telefon
                                         </h4>
-                                        <p>+387 61 123 456<br />+387 33 123 456</p>
+                                        <p>033 205-941</p>
                                     </div>
                                     <div className="space-y-4">
                                         <h4 className="font-medium text-foreground tracking-wide uppercase text-sm flex items-center gap-2">
-                                            <Mail className="text-gold" size={16} /> Email & Društvene mreže
+                                            <Mail className="text-gold" size={16} /> Email
                                         </h4>
                                         <p className="mb-2">info@fotodumisic.ba</p>
-                                        <a href="#" className="inline-flex text-foreground/80 hover:text-gold transition-colors">
-                                            <Instagram size={20} />
-                                        </a>
                                     </div>
                                 </div>
                             </FadeIn>
@@ -124,7 +121,7 @@ export default function ContactPage() {
                                 <div className="w-full h-[400px] rounded-sm overflow-hidden border border-muted/20 grayscale hover:grayscale-0 transition-all duration-700">
                                     {/* Google Maps iFrame */}
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.0195536413693!2d18.39845701549449!3d43.855424579114224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758ce0e2b34eb81%3A0xc3bbaebe104764b8!2sZmaja%20od%20Bosne%2C%20Sarajevo%2071000!5e0!3m2!1sen!2sba!4v1675123456789!5m2!1sen!2sba"
+                                        src="https://maps.google.com/maps?q=Zelenih%20beretki%2022,%20Sarajevo%2071000&t=&z=17&ie=UTF8&iwloc=&output=embed"
                                         width="100%"
                                         height="100%"
                                         style={{ border: 0 }}
