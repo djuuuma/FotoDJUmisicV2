@@ -6,7 +6,7 @@ import { X } from 'lucide-react';
 const categories = ['Sve', 'Vjenčanja', 'Portret', 'Event', 'Komercijalno'];
 
 const galleryImages = [
-  { id: 1, category: 'Vjenčanja', src: 'recepcija.jpg' },
+  { id: 1, category: 'Vjenčanja', src: '/recepcija.jpg' },
   { id: 2, category: 'Portret', src: 'https://picsum.photos/seed/p1/800/1000' },
   { id: 3, category: 'Event', src: 'https://picsum.photos/seed/e1/800/1000' },
   { id: 4, category: 'Vjenčanja', src: 'https://picsum.photos/seed/w2/800/800' },
@@ -55,8 +55,8 @@ export default function PortfolioPage() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-2 rounded-full text-xs tracking-widest uppercase transition-all duration-300 border ${activeCategory === cat
-                    ? 'bg-charcoal text-cream border-charcoal'
-                    : 'bg-transparent text-charcoal border-charcoal/20 hover:border-charcoal'
+                  ? 'bg-charcoal text-cream border-charcoal'
+                  : 'bg-transparent text-charcoal border-charcoal/20 hover:border-charcoal'
                   }`}
               >
                 {cat}
