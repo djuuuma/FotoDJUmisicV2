@@ -113,8 +113,8 @@ export function Footer() {
   return (
     <footer id="kontakt" className="bg-charcoal text-cream/90">
       <div className="container-editorial section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8">
-          <div className="lg:col-span-1">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8">
+          <div className="lg:max-w-sm">
             <Link to="/" className="font-serif text-2xl font-medium tracking-wide">
               <span className="italic mr-1">Foto</span>
               Đumišić
@@ -124,43 +124,43 @@ export function Footer() {
             </p>
           </div>
 
-          <div>
-            <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Navigacija</h4>
-            <ul className="space-y-3">
-              {['Portfolio', 'Usluge', 'O nama', 'Kontakt'].map((item) => (
-                <li key={item}>
-                  <Link to={['Portfolio', 'O nama', 'Kontakt'].includes(item) ? `/${item.toLowerCase().replace(' ', '-')}` : `/#${item.toLowerCase().replace(' ', '-')}`} className="text-cream/70 hover:text-cream transition-colors duration-300 font-light">
-                    {item}
-                  </Link>
+          <div className="flex flex-col sm:flex-row gap-12 lg:gap-24">
+            <div className="min-w-[150px]">
+              <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Navigacija</h4>
+              <ul className="space-y-3">
+                {['Portfolio', 'Usluge', 'O nama', 'Kontakt'].map((item) => (
+                  <li key={item}>
+                    <Link to={['Portfolio', 'O nama', 'Kontakt'].includes(item) ? `/${item.toLowerCase().replace(' ', '-')}` : `/#${item.toLowerCase().replace(' ', '-')}`} className="text-cream/70 hover:text-cream transition-colors duration-300 font-light">
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="min-w-[200px]">
+              <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Kontakt</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-cream/70 font-light">
+                  <Phone className="text-gold mt-1 shrink-0" size={16} />
+                  <span>
+                    033 205-941
+                  </span>
                 </li>
-              ))}
-            </ul>
+                <li className="flex items-center gap-3 text-cream/70 font-light">
+                  <Mail className="text-gold shrink-0" size={16} />
+                  <span>info@fotodumisic.ba</span>
+                </li>
+                <li className="flex items-start gap-3 text-cream/70 font-light">
+                  <MapPin className="text-gold mt-1 shrink-0" size={16} />
+                  <span>
+                    Zelenih beretki 22<br />
+                    Sarajevo, 71000
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
-
-          <div>
-            <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Kontakt</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-cream/70 font-light">
-                <Phone className="text-gold mt-1 shrink-0" size={16} />
-                <span>
-                  033 205-941
-                </span>
-              </li>
-              <li className="flex items-center gap-3 text-cream/70 font-light">
-                <Mail className="text-gold shrink-0" size={16} />
-                <span>info@fotodumisic.ba</span>
-              </li>
-              <li className="flex items-start gap-3 text-cream/70 font-light">
-                <MapPin className="text-gold mt-1 shrink-0" size={16} />
-                <span>
-                  Zelenih beretki 22<br />
-                  Sarajevo, 71000
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Removed instagram column */}
         </div>
 
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
