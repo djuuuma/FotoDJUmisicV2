@@ -21,7 +21,7 @@ export function Navbar() {
     { name: 'Početna', path: '/' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'Usluge', path: '/#usluge' },
-    { name: 'O nama', path: '/#o-nama' },
+    { name: 'O nama', path: '/o-nama' },
     { name: 'Kontakt', path: '/#kontakt' },
   ];
 
@@ -34,12 +34,12 @@ export function Navbar() {
               <span className="italic mr-1">Foto</span>
               Đumišić
             </Link>
-            
+
             <div className="hidden lg:flex items-center gap-10">
               {navItems.map((item) => (
-                <Link 
-                  key={item.name} 
-                  to={item.path} 
+                <Link
+                  key={item.name}
+                  to={item.path}
                   className={`text-sm tracking-widest uppercase font-light link-underline transition-colors duration-300 cursor-pointer text-cream ${location.pathname === item.path ? 'text-gold' : ''}`}
                 >
                   {item.name}
@@ -53,8 +53,8 @@ export function Navbar() {
               </a>
             </div>
 
-            <button 
-              className="lg:hidden p-2 transition-colors text-cream z-50 relative" 
+            <button
+              className="lg:hidden p-2 transition-colors text-cream z-50 relative"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -66,7 +66,7 @@ export function Navbar() {
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -80,7 +80,7 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 + 0.1 }}
               >
-                <Link 
+                <Link
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="font-serif text-3xl tracking-wide transition-all duration-300 cursor-pointer text-cream hover:text-gold"
@@ -94,7 +94,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <a 
+              <a
                 href="/#kontakt"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream text-charcoal hover:bg-cream/90 tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 mt-8"
@@ -123,20 +123,20 @@ export function Footer() {
               Bilježimo emocije, stvaramo uspomene koje traju.
             </p>
           </div>
-          
+
           <div>
             <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Navigacija</h4>
             <ul className="space-y-3">
               {['Portfolio', 'Usluge', 'O nama', 'Kontakt'].map((item) => (
                 <li key={item}>
-                  <Link to={item === 'Portfolio' ? '/portfolio' : `/#${item.toLowerCase().replace(' ', '-')}`} className="text-cream/70 hover:text-cream transition-colors duration-300 font-light">
+                  <Link to={['Portfolio', 'O nama'].includes(item) ? `/${item.toLowerCase().replace(' ', '-')}` : `/#${item.toLowerCase().replace(' ', '-')}`} className="text-cream/70 hover:text-cream transition-colors duration-300 font-light">
                     {item}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Kontakt</h4>
             <ul className="space-y-4">
@@ -160,7 +160,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Pratite nas</h4>
             <div className="flex gap-4">
@@ -170,7 +170,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-cream/40 text-sm font-light">
             © {new Date().getFullYear()} Foto Đumišić. Sva prava zadržana.
@@ -186,7 +186,7 @@ export function Footer() {
   );
 }
 
-export function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) {
+export function FadeIn({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string, key?: React.Key }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
