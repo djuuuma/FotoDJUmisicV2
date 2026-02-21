@@ -24,6 +24,34 @@ const galleryImages = [
   { id: 16, category: 'Event', src: 'https://picsum.photos/seed/e4/800/800' },
 ];
 
+function LazyImage({ src, alt, onClick }: { src: string, alt: string, onClick: () => void }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div
+      className="group relative overflow-hidden rounded-sm cursor-pointer bg-muted/20"
+      onClick={onClick}
+    >
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        onLoad={() => setIsLoaded(true)}
+        className={`w-full h-auto object-cover transition-all duration-700 group-hover:scale-105 ${isLoaded ? 'blur-0 opacity-100 grayscale-0' : 'blur-md opacity-0 grayscale'
+          }`}
+        referrerPolicy="no-referrer"
+      />
+      {isLoaded && (
+        <div className="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <span className="text-cream text-xs tracking-widest uppercase border border-cream/40 px-4 py-2 backdrop-blur-sm">
+            Povećaj
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('Sve');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -78,22 +106,11 @@ export default function PortfolioPage() {
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 className="break-inside-avoid"
               >
-                <div
-                  className="group relative overflow-hidden rounded-sm cursor-pointer"
+                <LazyImage
+                  src={img.src}
+                  alt={img.category}
                   onClick={() => setSelectedImage(img.src)}
-                >
-                  <img
-                    src={img.src}
-                    alt={img.category}
-                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-cream text-xs tracking-widest uppercase border border-cream/40 px-4 py-2 backdrop-blur-sm">
-                      Povećaj
-                    </span>
-                  </div>
-                </div>
+                />
               </motion.div>
             ))}
           </AnimatePresence>

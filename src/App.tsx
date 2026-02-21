@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import PortfolioPage from './pages/PortfolioPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import { Preloader } from './components/Preloader';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -31,6 +32,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <Router>
+      <Preloader />
       <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-background">
         <Navbar />
