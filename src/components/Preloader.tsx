@@ -2,15 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function Preloader() {
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(() => {
+        return !sessionStorage.getItem('preloaderShown');
+    });
 
     useEffect(() => {
+        if (!isLoading) return;
+
         // Simuliramo učitavanje od 2.5 sekunde
         const timer = setTimeout(() => {
             setIsLoading(false);
+            sessionStorage.setItem('preloaderShown', 'true');
         }, 2500);
         return () => clearTimeout(timer);
-    }, []);
+    }, [isLoading]);
 
     return (
         <AnimatePresence>

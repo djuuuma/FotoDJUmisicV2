@@ -48,9 +48,9 @@ export function Navbar() {
             </div>
 
             <div className="hidden lg:block">
-              <a href="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
+              <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
                 Rezerviši termin
-              </a>
+              </Link>
             </div>
 
             <button
@@ -94,13 +94,13 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              <a
-                href="/kontakt"
+              <Link
+                to="/kontakt"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream text-charcoal hover:bg-cream/90 tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 mt-8"
               >
                 Rezerviši termin
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         )}

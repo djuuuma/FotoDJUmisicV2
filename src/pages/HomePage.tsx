@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 import { FadeIn } from '../components/Layout';
 
 export default function HomePage() {
@@ -51,12 +51,12 @@ export default function HomePage() {
             </FadeIn>
             <FadeIn delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
+                <Link to="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
                   Pogledaj portfolio
-                </a>
-                <a href="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 text-cream border border-cream/50 backdrop-blur-sm hover:bg-cream/10 hover:text-cream tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 bg-transparent">
+                </Link>
+                <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 text-cream border border-cream/50 backdrop-blur-sm hover:bg-cream/10 hover:text-cream tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 bg-transparent">
                   Rezerviši termin
-                </a>
+                </Link>
               </div>
             </FadeIn>
           </div>
@@ -88,9 +88,9 @@ export default function HomePage() {
                 </p>
               </FadeIn>
               <FadeIn delay={0.4}>
-                <a href="/o-nama" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
+                <Link to="/o-nama" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
                   Saznaj više
-                </a>
+                </Link>
               </FadeIn>
             </div>
             <FadeIn delay={0.3}>
@@ -117,7 +117,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, i) => (
               <FadeIn key={service.title} delay={i * 0.2}>
-                <a href="/portfolio" className="group block relative overflow-hidden aspect-[3/4] rounded-sm">
+                <Link to="/portfolio" className="group block relative overflow-hidden aspect-[3/4] rounded-sm">
                   <img src={service.img} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -126,7 +126,7 @@ export default function HomePage() {
                       Pogledaj galeriju →
                     </span>
                   </div>
-                </a>
+                </Link>
               </FadeIn>
             ))}
           </div>
@@ -157,9 +157,9 @@ export default function HomePage() {
 
           <FadeIn delay={0.4}>
             <div className="text-center mt-12">
-              <a href="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
+              <Link to="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
                 Pogledaj cijeli portfolio
-              </a>
+              </Link>
             </div>
           </FadeIn>
         </div>
@@ -208,9 +208,9 @@ export default function HomePage() {
             <p className="text-cream/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
               Pošaljite upit i dobićete odgovor u roku 24h.
             </p>
-            <a href="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
+            <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
               Kontakt
-            </a>
+            </Link>
           </FadeIn>
         </div>
       </section>
