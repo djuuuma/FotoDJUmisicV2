@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FadeIn } from '../components/Layout';
+import { AnimatedTestimonials } from '../components/AnimatedTestimonials';
 
 export default function HomePage() {
   const services = [
@@ -10,23 +11,7 @@ export default function HomePage() {
 
   const portfolioPreview = Array.from({ length: 8 }).map((_, i) => `https://picsum.photos/seed/port${i}/800/800`);
 
-  const testimonials = [
-    {
-      quote: "A photography shop with a long tradition. A wonderful and professional duo, father and son, from whom you will leave with a smile in addition to top quality photos.",
-      name: "Belma Kapić",
-      event: "Google Review"
-    },
-    {
-      quote: "I got my films developed here! They were very nice, and fast! Got the scans back in 2 days via e-mail.",
-      name: "Şevval Akkaya",
-      event: "Google Review"
-    },
-    {
-      quote: "A very pleasant young man was helping us with document photos. High quality and done in 20 minutes.",
-      name: "Timur Ljubuncic",
-      event: "Google Review"
-    }
-  ];
+
 
   return (
     <>
@@ -166,32 +151,31 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-ivory">
-        <div className="container-editorial">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <span className="text-sm tracking-widest uppercase text-gold mb-4 block">Utisci</span>
-              <h2 className="editorial-subheading text-foreground">
-                Šta kažu naši <span className="italic">klijenti</span>
-              </h2>
-            </div>
-          </FadeIn>
-
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            {testimonials.map((t, i) => (
-              <FadeIn key={i} delay={i * 0.2}>
-                <div className="text-center">
-                  <p className="font-sans text-base md:text-lg font-light text-foreground/80 leading-relaxed mb-6">
-                    "{t.quote}"
-                  </p>
-                  <p className="font-medium text-foreground">{t.name}</p>
-                  <p className="text-sm text-muted">{t.event}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
+      <AnimatedTestimonials
+        testimonials={[
+          {
+            id: 1,
+            name: "Belma Kapić",
+            source: "Google Review",
+            content:
+              "A photography shop with a long tradition. A wonderful and professional duo, father and son, from whom you will leave with a smile in addition to top quality photos.",
+          },
+          {
+            id: 2,
+            name: "Şevval Akkaya",
+            source: "Google Review",
+            content:
+              "I got my films developed here! They were very nice, and fast! Got the scans back in 2 days via e-mail.",
+          },
+          {
+            id: 3,
+            name: "Timur Ljubuncic",
+            source: "Google Review",
+            content:
+              "A very pleasant young man was helping us with document photos. High quality and done in 20 minutes.",
+          },
+        ]}
+      />
 
       {/* CTA */}
       <section className="relative py-32 md:py-40">
