@@ -4,9 +4,9 @@ import { AnimatedTestimonials } from '../components/AnimatedTestimonials';
 
 export default function HomePage() {
   const services = [
-    { title: 'Vjenčanja & Eventi', img: 'https://picsum.photos/seed/wedding2/600/800' },
-    { title: 'Portreti & Dokumenti', img: 'https://picsum.photos/seed/portrait/600/800' },
-    { title: 'Razvijanje 35mm Filma', img: 'https://picsum.photos/seed/film/600/800' },
+    { title: 'Vjenčanja & Eventi', img: '/vencanje 1prva.jpg' },
+    { title: 'Portreti & Dokumenti', img: '/slika momaka.jpg' },
+    { title: 'Razvijanje 35mm Filma', img: '/digitize-35mm-film-negative-transfer.jpg' },
   ];
 
   const portfolioPreview = Array.from({ length: 8 }).map((_, i) => `https://picsum.photos/seed/port${i}/800/800`);
@@ -18,7 +18,7 @@ export default function HomePage() {
       {/* Hero */}
       <section id="početna" className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
-          <img src="https://picsum.photos/seed/wedding1/1920/1080" alt="Foto Đumišić studio" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+          <img src="/vecteezy_newlywed-couple-embraces-in-beautiful-outdoor-wedding_24576188.jpg" alt="Foto Đumišić studio" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/60 via-charcoal/30 to-charcoal/80"></div>
 
@@ -80,7 +80,7 @@ export default function HomePage() {
             </div>
             <FadeIn delay={0.3}>
               <div className="image-hover-zoom rounded-sm">
-                <img src="https://picsum.photos/seed/camera/800/1000" alt="O studiju" className="w-full h-[500px] lg:h-[600px] object-cover" referrerPolicy="no-referrer" />
+                <img src="/vencanje 2 druga.jpg" alt="O studiju" className="w-full h-[500px] lg:h-[600px] object-cover" referrerPolicy="no-referrer" />
               </div>
             </FadeIn>
           </div>
