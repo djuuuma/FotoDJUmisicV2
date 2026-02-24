@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Quote } from 'lucide-react';
 import { FadeIn } from './Layout';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Testimonial {
     id: number;
@@ -20,6 +21,7 @@ export function AnimatedTestimonials({
     autoRotateInterval = 6000,
 }: AnimatedTestimonialsProps) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const { t } = useLanguage();
 
     // Auto rotate testimonials
     useEffect(() => {
@@ -43,17 +45,16 @@ export function AnimatedTestimonials({
                         <FadeIn>
                             <div className="space-y-6">
                                 <span className="text-sm tracking-widest uppercase text-gold mb-4 block">
-                                    Utisci
+                                    {t('testimonials.tag')}
                                 </span>
 
                                 <h2 className="editorial-subheading text-foreground">
-                                    Šta kažu naši{' '}
-                                    <span className="italic">klijenti</span>
+                                    {t('testimonials.title_1')}
+                                    <span className="italic">{t('testimonials.title_2')}</span>
                                 </h2>
 
                                 <p className="editorial-body max-w-[500px]">
-                                    Svaki projekat doživljavamo lično. Evo šta naši klijenti kažu
-                                    o iskustvu rada s nama.
+                                    {t('testimonials.desc')}
                                 </p>
 
                                 <div className="flex items-center gap-3 pt-4">
@@ -62,10 +63,10 @@ export function AnimatedTestimonials({
                                             key={index}
                                             onClick={() => setActiveIndex(index)}
                                             className={`h-[3px] rounded-full transition-all duration-300 ${activeIndex === index
-                                                    ? 'w-10 bg-gold'
-                                                    : 'w-3 bg-muted/30'
+                                                ? 'w-10 bg-gold'
+                                                : 'w-3 bg-muted/30'
                                                 }`}
-                                            aria-label={`Pogledaj utisak ${index + 1}`}
+                                            aria-label={t('testimonials.view_btn') + ` ${index + 1}`}
                                         />
                                     ))}
                                 </div>

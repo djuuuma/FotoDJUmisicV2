@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin, Instagram } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === '/';
+
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +21,11 @@ export function Navbar() {
   }, []);
 
   const navItems = [
-    { name: 'Početna', path: '/' },
-    { name: 'Portfolio', path: '/portfolio' },
-    { name: 'Usluge', path: '/#usluge' },
-    { name: 'O nama', path: '/o-nama' },
-    { name: 'Kontakt', path: '/kontakt' },
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.portfolio'), path: '/portfolio' },
+    { name: t('nav.services'), path: '/#usluge' },
+    { name: t('nav.about'), path: '/o-nama' },
+    { name: t('nav.contact'), path: '/kontakt' },
   ];
 
   return (
@@ -49,7 +52,7 @@ export function Navbar() {
 
             <div className="hidden lg:block">
               <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
-                Rezerviši termin
+                {t('nav.book')}
               </Link>
             </div>
 
@@ -99,7 +102,7 @@ export function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream text-charcoal hover:bg-cream/90 tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 mt-8"
               >
-                Rezerviši termin
+                {t('nav.book')}
               </Link>
             </motion.div>
           </motion.div>
@@ -110,6 +113,15 @@ export function Navbar() {
 }
 
 export function Footer() {
+  const { t, language, setLanguage } = useLanguage();
+
+  const footerNav = [
+    { name: t('nav.portfolio'), path: '/portfolio' },
+    { name: t('nav.services'), path: '/#usluge' },
+    { name: t('nav.about'), path: '/o-nama' },
+    { name: t('nav.contact'), path: '/kontakt' }
+  ];
+
   return (
     <footer id="kontakt" className="bg-charcoal text-cream/90">
       <div className="container-editorial section-padding">
@@ -120,18 +132,18 @@ export function Footer() {
               Đumišić
             </Link>
             <p className="mt-4 text-cream/60 font-light leading-relaxed">
-              Bilježimo emocije, stvaramo uspomene koje traju.
+              {t('footer.slogan')}
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-12 lg:gap-24">
             <div className="min-w-[150px]">
-              <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Navigacija</h4>
+              <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">{t('footer.navigation')}</h4>
               <ul className="space-y-3">
-                {['Portfolio', 'Usluge', 'O nama', 'Kontakt'].map((item) => (
-                  <li key={item}>
-                    <Link to={['Portfolio', 'O nama', 'Kontakt'].includes(item) ? `/${item.toLowerCase().replace(' ', '-')}` : `/#${item.toLowerCase().replace(' ', '-')}`} className="text-cream/70 hover:text-cream transition-colors duration-300 font-light">
-                      {item}
+                {footerNav.map((item) => (
+                  <li key={item.name}>
+                    <Link to={item.path} className="text-cream/70 hover:text-cream transition-colors duration-300 font-light">
+                      {item.name}
                     </Link>
                   </li>
                 ))}
@@ -139,7 +151,7 @@ export function Footer() {
             </div>
 
             <div className="min-w-[200px]">
-              <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">Kontakt</h4>
+              <h4 className="text-sm tracking-widest uppercase mb-6 text-cream/40">{t('footer.contact')}</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-cream/70 font-light">
                   <Phone className="text-gold mt-1 shrink-0" size={16} />
@@ -154,8 +166,8 @@ export function Footer() {
                 <li className="flex items-start gap-3 text-cream/70 font-light">
                   <MapPin className="text-gold mt-1 shrink-0" size={16} />
                   <span>
-                    Zelenih beretki 22<br />
-                    Sarajevo, 71000
+                    {t('footer.address_line1')}<br />
+                    {t('footer.address_line2')}
                   </span>
                 </li>
               </ul>
@@ -165,10 +177,24 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-cream/40 text-sm font-light">
-            © {new Date().getFullYear()} Foto Đumišić. Sva prava zadržana.
+            © {new Date().getFullYear()} {t('footer.rights')}
           </p>
-          <div className="flex gap-6 text-sm text-cream/40">
-            <a href="#" className="hover:text-cream/70 transition-colors">BS</a>
+          <div className="flex gap-4 text-sm text-cream/40">
+            <button
+              onClick={() => setLanguage('BS')}
+              className={`transition-colors font-medium ${language === 'BS' ? 'text-gold' : 'hover:text-cream/70'}`}
+              aria-label="Switch to Bosnian"
+            >
+              BS
+            </button>
+            <span>|</span>
+            <button
+              onClick={() => setLanguage('ENG')}
+              className={`transition-colors font-medium ${language === 'ENG' ? 'text-gold' : 'hover:text-cream/70'}`}
+              aria-label="Switch to English"
+            >
+              ENG
+            </button>
           </div>
         </div>
       </div>

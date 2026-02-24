@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom';
 import { FadeIn } from '../components/Layout';
 import { AnimatedTestimonials } from '../components/AnimatedTestimonials';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function HomePage() {
+  const { t } = useLanguage();
   const services = [
-    { title: 'Vjenčanja & Eventi', img: '/vencanje 1prva.jpg' },
-    { title: 'Portreti & Dokumenti', img: '/slika momaka.jpg' },
-    { title: 'Razvijanje 35mm Filma', img: '/digitize-35mm-film-negative-transfer.jpg' },
+    { title: t('home.services.weddings'), img: '/vencanje 1prva.jpg' },
+    { title: t('home.services.portraits'), img: '/slika momaka.jpg' },
+    { title: t('home.services.film'), img: '/digitize-35mm-film-negative-transfer.jpg' },
   ];
 
   const portfolioPreview = Array.from({ length: 8 }).map((_, i) => `https://picsum.photos/seed/port${i}/800/800`);
@@ -26,21 +28,21 @@ export default function HomePage() {
           <div className="text-center text-cream px-6 max-w-4xl mt-16">
             <FadeIn>
               <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight mb-6">
-                Fotografija koja ima osjećaj.
+                {t('home.hero_title')}
               </h1>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-lg md:text-xl lg:text-2xl font-light mb-10 text-cream/90">
-                Bilježimo emociju, detalje i trenutke koji traju.
+                {t('home.hero_subtitle')}
               </p>
             </FadeIn>
             <FadeIn delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
-                  Pogledaj portfolio
+                  {t('home.view_portfolio')}
                 </Link>
                 <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 text-cream border border-cream/50 backdrop-blur-sm hover:bg-cream/10 hover:text-cream tracking-widest uppercase text-xs font-sans h-14 px-10 py-4 bg-transparent">
-                  Rezerviši termin
+                  {t('home.book_term')}
                 </Link>
               </div>
             </FadeIn>
@@ -58,23 +60,23 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
               <FadeIn>
-                <span className="text-sm tracking-widest uppercase text-gold mb-4 block">O studiju</span>
+                <span className="text-sm tracking-widest uppercase text-gold mb-4 block">{t('home.about_tag')}</span>
                 <h2 className="editorial-subheading text-foreground">
-                  Prirodno. Čisto.<br />
-                  <span className="italic">Emotivno.</span>
+                  {t('home.about_title_1')}<br />
+                  <span className="italic">{t('home.about_title_2')}</span>
                 </h2>
               </FadeIn>
               <FadeIn delay={0.2}>
                 <p className="editorial-body mb-6">
-                  U Foto Đumišić studiju vjerujemo da svaka fotografija treba pričati priču. Naš pristup je diskretan i prirodan – fokusiramo se na emocije, detalje i autentične trenutke koji čine vaše uspomene posebnim.
+                  {t('home.about_desc_1')}
                 </p>
                 <p className="editorial-body mb-8">
-                  Sa godinama iskustva u fotografiji vjenčanja, portreta, porodičnih sesija i komercijalnog snimanja, donosimo profesionalnost i kreativnost u svaki projekat.
+                  {t('home.about_desc_2')}
                 </p>
               </FadeIn>
               <FadeIn delay={0.4}>
                 <Link to="/o-nama" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
-                  Saznaj više
+                  {t('home.learn_more')}
                 </Link>
               </FadeIn>
             </div>
@@ -92,9 +94,9 @@ export default function HomePage() {
         <div className="container-editorial">
           <FadeIn>
             <div className="text-center mb-16">
-              <span className="text-sm tracking-widest uppercase text-gold mb-4 block">Naše usluge</span>
+              <span className="text-sm tracking-widest uppercase text-gold mb-4 block">{t('home.services_tag')}</span>
               <h2 className="editorial-subheading text-foreground">
-                Šta <span className="italic">nudimo</span>
+                {t('home.services_title_1')}<span className="italic">{t('home.services_title_2')}</span>
               </h2>
             </div>
           </FadeIn>
@@ -108,7 +110,7 @@ export default function HomePage() {
                   <div className="absolute bottom-0 left-0 right-0 p-8">
                     <h3 className="font-serif text-2xl text-cream mb-2">{service.title}</h3>
                     <span className="text-cream/70 text-sm tracking-widest uppercase group-hover:text-gold transition-colors duration-300">
-                      Pogledaj galeriju →
+                      {t('home.view_gallery')}
                     </span>
                   </div>
                 </Link>
@@ -123,9 +125,9 @@ export default function HomePage() {
         <div className="container-editorial">
           <FadeIn>
             <div className="text-center mb-16">
-              <span className="text-sm tracking-widest uppercase text-gold mb-4 block">Portfolio</span>
+              <span className="text-sm tracking-widest uppercase text-gold mb-4 block">{t('home.portfolio_tag')}</span>
               <h2 className="editorial-subheading text-foreground">
-                Svaka galerija je <span className="italic">priča</span>
+                {t('home.portfolio_title_1')}<span className="italic">{t('home.portfolio_title_2')}</span>
               </h2>
             </div>
           </FadeIn>
@@ -143,7 +145,7 @@ export default function HomePage() {
           <FadeIn delay={0.4}>
             <div className="text-center mt-12">
               <Link to="/portfolio" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 border border-charcoal text-charcoal bg-transparent hover:bg-charcoal hover:text-cream tracking-widest uppercase text-xs font-sans h-12 px-8 py-3">
-                Pogledaj cijeli portfolio
+                {t('home.view_full_portfolio')}
               </Link>
             </div>
           </FadeIn>
@@ -187,13 +189,13 @@ export default function HomePage() {
         <div className="relative z-10 container-editorial text-center px-6">
           <FadeIn>
             <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-cream mb-4">
-              Spremni za termin?
+              {t('home.cta_title')}
             </h2>
             <p className="text-cream/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
-              Pošaljite upit i dobićete odgovor u roku 24h.
+              {t('home.cta_subtitle')}
             </p>
             <Link to="/kontakt" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all duration-300 bg-cream/20 text-cream border border-cream/40 backdrop-blur-sm hover:bg-cream hover:text-charcoal tracking-widest uppercase text-xs font-sans h-14 px-10 py-4">
-              Kontakt
+              {t('home.cta_button')}
             </Link>
           </FadeIn>
         </div>

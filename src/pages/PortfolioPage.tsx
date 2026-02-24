@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FadeIn } from '../components/Layout';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const categories = ['Sve', 'Vjenčanja', 'Portret', 'Event', 'Komercijalno'];
 
@@ -26,6 +27,7 @@ const galleryImages = [
 
 function LazyImage({ src, alt, onClick }: { src: string, alt: string, onClick: () => void }) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div
@@ -44,7 +46,7 @@ function LazyImage({ src, alt, onClick }: { src: string, alt: string, onClick: (
       {isLoaded && (
         <div className="absolute inset-0 bg-charcoal/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <span className="text-cream text-xs tracking-widest uppercase border border-cream/40 px-4 py-2 backdrop-blur-sm">
-            Povećaj
+            {t('portfolio.zoom')}
           </span>
         </div>
       )}
@@ -53,6 +55,18 @@ function LazyImage({ src, alt, onClick }: { src: string, alt: string, onClick: (
 }
 
 export default function PortfolioPage() {
+  const { t } = useLanguage();
+
+  const categoriesMap: Record<string, string> = {
+    'Sve': t('portfolio.categories.all'),
+    'Vjenčanja': t('portfolio.categories.weddings'),
+    'Portret': t('portfolio.categories.portrait'),
+    'Event': t('portfolio.categories.event'),
+    'Komercijalno': t('portfolio.categories.commercial')
+  };
+
+  const categories = Object.keys(categoriesMap);
+
   const [activeCategory, setActiveCategory] = useState('Sve');
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -65,12 +79,12 @@ export default function PortfolioPage() {
       <div className="container-editorial">
         <FadeIn>
           <div className="text-center mb-12">
-            <span className="text-sm tracking-widest uppercase text-gold mb-4 block">Galerija</span>
+            <span className="text-sm tracking-widest uppercase text-gold mb-4 block">{t('portfolio.tag')}</span>
             <h1 className="editorial-subheading text-foreground">
-              Naš <span className="italic">Portfolio</span>
+              {t('portfolio.title_1')}<span className="italic">{t('portfolio.title_2')}</span>
             </h1>
             <p className="editorial-body max-w-2xl mx-auto mt-4">
-              Pregledajte naše najbolje radove kroz različite kategorije. Svaka fotografija je pažljivo obrađena kako bi prenijela pravu emociju.
+              {t('portfolio.desc')}
             </p>
           </div>
         </FadeIn>
@@ -87,7 +101,7 @@ export default function PortfolioPage() {
                   : 'bg-transparent text-charcoal border-charcoal/20 hover:border-charcoal'
                   }`}
               >
-                {cat}
+                {categoriesMap[cat]}
               </button>
             ))}
           </div>

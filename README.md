@@ -28,7 +28,7 @@ Through this project, I learned to integrate several modern web technologies:
 ## 💡 What I Learned
 1.  **Component Architecture:** Breaking down the UI into logical, reusable components (`Layout`, `Preloader`).
 2.  **State & Animations:** Using external libraries to add complex animations without degrading performance.
-3.  **Client-Focused Design:** Designing a UI/UX that emphasizes large, high-quality images, giving priority to visual content over text, exactly what a photographer needs!
+3.  **Client-Focused Design:** Designiing a UI/UX that emphaszes large, high-quality images, giving priority to visual content over text, exactly what a photographer needs!
 4.  **Deployment Prep (Netlify):** I also configured `netlify.toml` and `_redirects` to ensure the React Router works perfectly on Netlify when the site is deployed.
 
 This has been an amazing learning journey! Thanks for checking out my work. 🎓✨
