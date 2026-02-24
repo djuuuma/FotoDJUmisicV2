@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage';
 import PortfolioPage from './pages/PortfolioPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import ServicesPage from './pages/ServicesPage';
 import { Preloader } from './components/Preloader';
 import { LanguageProvider } from './contexts/LanguageContext';
 
@@ -42,6 +43,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/portfolio" element={<PortfolioPage />} />
+              <Route path="/usluge" element={<ServicesPage />} />
               <Route path="/o-nama" element={<AboutPage />} />
               <Route path="/kontakt" element={<ContactPage />} />
             </Routes>

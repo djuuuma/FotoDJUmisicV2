@@ -23,7 +23,7 @@ export function Navbar() {
   const navItems = [
     { name: t('nav.home'), path: '/' },
     { name: t('nav.portfolio'), path: '/portfolio' },
-    { name: t('nav.services'), path: '/#usluge' },
+    { name: t('nav.services'), path: '/usluge' },
     { name: t('nav.about'), path: '/o-nama' },
     { name: t('nav.contact'), path: '/kontakt' },
   ];
@@ -117,7 +117,7 @@ export function Footer() {
 
   const footerNav = [
     { name: t('nav.portfolio'), path: '/portfolio' },
-    { name: t('nav.services'), path: '/#usluge' },
+    { name: t('nav.services'), path: '/usluge' },
     { name: t('nav.about'), path: '/o-nama' },
     { name: t('nav.contact'), path: '/kontakt' }
   ];
